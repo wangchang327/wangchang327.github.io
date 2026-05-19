@@ -1,0 +1,62 @@
+.about {
+    p {
+        margin-bottom: $post-vertical-rythm;
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+
+    strong {
+        font-weight: $font-weight-bold;
+    }
+
+    h3 {
+        @include heading3;
+
+        margin-top: $post-vertical-rythm * 1.8;
+        margin-bottom: $post-vertical-rythm * 0.6;
+    }
+
+    a {
+        @include link(true);
+    }
+
+    figure.profile {
+        overflow: hidden;
+        width: 180px;
+        height: 240px;
+        border-radius: 0.5rem;
+        margin: auto;
+        margin-bottom: 1rem;
+
+        @include media('>=medium') {
+            width: 180px;
+            height: 240px;
+            float: right;
+            border-radius: 0.5rem;
+        }
+
+        img {
+            border-radius: 0.5rem;
+            width: 100%;
+        }
+    }
+
+    .description {
+        text-align: center;
+
+        @include media('>=medium') {
+            text-align: left;
+        }
+    }
+}
+
+.about img.logo {
+    display: none;
+
+    @include media('>=medium') {
+        display: block;
+        width: 60px;
+    }
+
+    float: right;
+}

@@ -1,0 +1,44 @@
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1QL9CP74XK"></script>
+<script type="text/javascript">
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-1QL9CP74XK');
+</script>
+
+<script type="text/javascript">
+    var tables = document.getElementsByTagName('table');
+    for (var i = 0; i < tables.length; ++i) {
+        var table = tables[i];
+
+        titles = new Array();
+        var headers = table.rows[0].getElementsByTagName('th');
+        if (headers.length == 0) {
+            continue;
+        }
+
+        for (var j = 0; j < headers.length; ++j) {
+            titles.push(headers[j].innerText || headers[j].textContent);
+        }
+
+        for (var j = 1; j < table.rows.length; ++j) {
+            var cells = table.rows[j].getElementsByTagName('td');
+            if (cells.length == titles.length) {
+                for (var k = 0; k < cells.length; ++k) {
+                    cells[k].setAttribute('header', titles[k]);
+                }
+            }
+        }
+    }
+</script>
+
+<script type="text/javascript">
+    function toggleDiv(id) {
+        var div = document.getElementById(id);
+        div.style.display = div.style.display == 'none' ? 'block' : 'none';
+    }
+</script>
+
+{{ if .Param "math" }}
+    {{ partialCached "math.html" . }}
+{{ end }}

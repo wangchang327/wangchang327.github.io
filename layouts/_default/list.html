@@ -1,0 +1,8 @@
+{{ define "body" }}
+    {{ partial "masthead.html" . }}
+    <main id="main" role="main" class="main">
+        <div class="items">
+            {{ .Content }}
+        </div>
+    </main>
+{{ end }}

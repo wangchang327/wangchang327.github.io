@@ -1,0 +1,31 @@
+footer {
+    display: block;
+    text-align: center;
+    font-size: $font-size-small;
+    line-height: $line-height-normal;
+    padding: 20px;
+    height: 5rem;
+    background: url(/assets/images/iceberg.svg);
+    background-size: contain;
+    background-position: center 100%;
+    background-repeat: no-repeat;
+
+    @include media('>=medium') {
+        padding: 43.2px;
+        padding-top: 20px;
+        height: 10rem;
+    }
+
+    a {
+        @include link(true);
+    }
+
+    .footer__item {
+        display: inline;
+    }
+
+    .footer__item + .footer__item::before {
+        content: "\00b7";
+        margin: 0 0.35rem;
+    }
+}

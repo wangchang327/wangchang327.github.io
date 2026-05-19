@@ -1,0 +1,79 @@
+@mixin post-body() {
+    margin-top: $post-vertical-rythm;
+    font-size: 21px;
+    line-height: 1.5;
+
+    p {
+        margin-bottom: $post-vertical-rythm;
+    }
+
+    a {
+        @include link(true);
+    }    
+}
+
+.post__title {
+    @include heading2;
+
+    text-align: center;
+
+    @include media('>=medium') {
+        text-align: left;
+    }
+}
+
+.post__meta-row {
+    align-items: baseline;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.post__meta-link {
+    @include link(true);
+
+    color: inherit;
+    margin-bottom: 1.6rem;
+    margin-left: auto;
+    margin-top: -0.8rem;
+}
+
+.post__summary {
+    text-align: center;
+
+    @include media('>=medium') {
+        text-align: left;
+    }
+}
+
+.post__body {
+    @include post-body;
+}
+
+.post--blog {
+    .post__body {
+        img {
+            height: auto;
+            max-width: 100%;
+            width: 100%;
+        }
+
+        .post-image--horizontal {
+            @include media('>=medium') {
+                max-width: 36rem;
+            }
+        }
+
+        .post-image--vertical {
+            @include media('>=medium') {
+                max-width: 24rem;
+            }
+        }
+
+        figure,
+        p > img:only-child {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}

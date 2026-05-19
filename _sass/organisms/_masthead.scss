@@ -1,0 +1,51 @@
+.masthead {
+    .masthead-title {
+        text-align: center;
+        font-family: $font-family-tertiary;
+
+        @include media('>=medium') {
+            text-align: left;
+        }
+    }
+
+    margin-top: 25px;
+
+    @include media('>=medium') {
+        margin-top: 60px;
+    }
+
+    @include constrain(900px);
+    padding: 0 20px;
+}
+
+.masthead__wrapper {
+    position: relative;
+}
+
+.masthead-bar__menu {
+    text-align: center;
+    font-family: $font-family-tertiary;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    line-height: $line-height-normal;
+
+    @include media('>=medium') {
+        margin-top: 0;
+        position: absolute;
+        right: 0;
+        top: 8px;
+    }
+
+    .masthead-bar__menu-item:not(:first-child) {
+        margin-left: 1rem;
+    }
+
+    a {
+        text-transform: uppercase;
+    }
+}
+
+.masthead-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+}

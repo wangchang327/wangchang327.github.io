@@ -1,0 +1,33 @@
+baseURL = "https://wangchang327.github.io/"
+title = "Chang Wang"
+languageCode = "en-us"
+timezone = "America/Chicago"
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term"]
+
+[params]
+    description = ""
+    author = "Chang Wang"
+    math = true
+
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
+        [markup.goldmark.extensions]
+            [markup.goldmark.extensions.passthrough]
+                enable = true
+                [markup.goldmark.extensions.passthrough.delimiters]
+                    block = [['\[', '\]']]
+                    inline = [['\(', '\)']]
+
+[outputs]
+    home = ["HTML", "RSS"]
+
+[mediaTypes]
+    [mediaTypes."text/plain"]
+        suffixes = ["txt"]
+
+[caches]
+    [caches.images]
+        dir = ':cacheDir/images'

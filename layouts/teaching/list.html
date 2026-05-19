@@ -1,0 +1,39 @@
+{{ define "body" }}
+    {{ partial "masthead.html" . }}
+    <main id="main" role="main" class="main">
+        {{ $courses := collections.Reverse hugo.Data.teaching }}
+        <div class="items items--compact">
+            <h2>Northwestern University</h2>
+            {{ range $courses }}
+                {{ if eq .school "NU" }}
+                    <div class="item">
+                        <h3>
+                            {{ if .ta }}TA for {{ end }}
+                            {{ if .url }}
+                                <a href="{{ .url }}">{{ .number }}: {{ .title }} ({{ .semester }})</a>
+                            {{ else }}
+                                {{ .number }}: {{ .title }} ({{ .semester }})
+                            {{ end }}
+                        </h3>
+                    </div>
+                {{ end }}
+            {{ end }}
+
+            <h2>Peking University</h2>
+            {{ range $courses }}
+                {{ if eq .school "PKU" }}
+                    <div class="item">
+                        <h3>
+                            {{ if .ta }}TA for {{ end }}
+                            {{ if .url }}
+                                <a href="{{ .url }}">{{ .number }}: {{ .title }} ({{ .semester }})</a>
+                            {{ else }}
+                                {{ .number }}: {{ .title }} ({{ .semester }})
+                            {{ end }}
+                        </h3>
+                    </div>
+                {{ end }}
+            {{ end }}
+        </div>
+    </main>
+{{ end }}

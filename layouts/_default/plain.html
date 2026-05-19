@@ -1,0 +1,10 @@
+{{ define "body" }}
+    <main id="main" role="main" class="main">
+        <article class="post">
+            <h1 class="post__title">{{ .Title }}</h1>
+            <div class="post__body body-text">
+                {{ .Content | markdownify }}
+            </div>
+        </article>
+    </main>
+{{ end }}

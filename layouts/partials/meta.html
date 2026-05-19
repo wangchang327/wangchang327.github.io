@@ -1,0 +1,20 @@
+{{ $title := .Title }}
+{{ $description := cond .IsHome site.Params.description (or .Summary site.Params.description) }}
+{{ if .Param "math" }}
+    {{ $description = site.Params.description }}
+{{ end }}
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>
+    {{ if eq .Params.cw false }}
+        {{ $title }}
+    {{ else if $title }}
+        {{ site.Title }} | {{ $title }}
+    {{ else }}
+        {{ site.Title }} | {{ site.Params.description }}
+    {{ end }}
+</title>
+{{ with $description }}
+    <meta name="description" content="{{ . | plainify | htmlUnescape | chomp }}">
+{{ end }}

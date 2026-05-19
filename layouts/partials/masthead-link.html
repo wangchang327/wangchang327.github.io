@@ -1,0 +1,13 @@
+{{ $page := .page }}
+{{ $link := .link }}
+{{ $target := cond (eq $link "") "/" (printf "/%s/" $link) }}
+{{ $current := $page.RelPermalink }}
+{{ $active := false }}
+{{ if eq $link "" }}
+    {{ $active = $page.IsHome }}
+{{ else if and (not (hasPrefix $current "/blog/")) (hasPrefix $current $target) }}
+    {{ $active = true }}
+{{ end }}
+<span class="masthead-bar__menu-item">
+    <a class="link{{ if $active }} link--active{{ end }}" href="{{ $target }}">{{ .title }}</a>
+</span>

@@ -1,0 +1,16 @@
+.main {
+    @include transition(transform opacity);
+
+    margin-top: $post-vertical-rythm;
+    overflow: hidden;
+
+    @include constrain(900px);
+
+    padding: 0 20px;
+
+    margin-bottom: 15px;
+
+    @include media('>=medium') {
+        margin-bottom: 30px;
+    }
+}

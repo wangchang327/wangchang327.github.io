@@ -1,0 +1,62 @@
+{{ $writing := .writing }}
+{{ $collaborators := hugo.Data.collaborators }}
+<article class="item">
+    <div class="item__primary-actions">
+        {{ with $writing.arxiv }}
+            <span>
+                <a href="https://arxiv.org/abs/{{ . }}" target="_blank" rel="noopener">arxiv</a>
+            </span>
+        {{ end }}
+        {{ with $writing.slides }}
+            <span>
+                <a href="slides/{{ . }}/index.html" target="_blank" rel="noopener">slides</a>
+            </span>
+        {{ end }}
+    </div>
+    <h3>
+        <span class="toggle-summary" onclick="toggleDiv(`{{ $writing.title }}`)">
+            {{ $writing.title }}
+        </span>
+        {{ with $writing.coauthors }}
+            {{ $authors := slice }}
+            {{ range . }}
+                {{ $person := index $collaborators . }}
+                {{ if $person.url }}
+                    {{ $authors = $authors | append (printf `<a href="%s" target="_blank" rel="noopener">%s</a>` $person.url $person.name) }}
+                {{ else }}
+                    {{ $authors = $authors | append $person.name }}
+                {{ end }}
+            {{ end }}
+            {{ if eq (len $authors) 1 }}
+                <span> (with {{ index $authors 0 | safeHTML }})</span>
+            {{ else }}
+                <span> (with {{ delimit (first (sub (len $authors) 1) $authors) ", " | safeHTML }} and {{ index $authors (sub (len $authors) 1) | safeHTML }})</span>
+            {{ end }}
+        {{ end }}
+    </h3>
+    <p class="item__secondary-actions">
+        {{ with $writing.journal }}
+            <span>{{ .citation }}</span>
+            <span><a href="{{ .url }}" target="_blank" rel="noopener">article</a></span>
+        {{ end }}
+        {{ with $writing.conf }}
+            <span>{{ .citation }}</span>
+            <span><a href="{{ .url }}" target="_blank" rel="noopener">article</a></span>
+        {{ end }}
+        {{ with $writing.expository }}
+            <span>{{ .citation }}</span>
+            <span><a href="{{ .url }}" target="_blank" rel="noopener">buy a copy</a></span>
+        {{ end }}
+        {{ with $writing.errata }}
+            <span><a href="{{ . }}" target="_blank" rel="noopener">errata</a></span>
+        {{ end }}
+    </p>
+    <p class="item__secondary-actions">
+        {{ with $writing.note }}{{ . }}{{ end }}
+    </p>
+    <div id="{{ $writing.title }}" class="item__secondary-actions summary" style="display: none;">
+        <p>
+            {{ with $writing.summary }}{{ . | markdownify }}{{ end }}
+        </p>
+    </div>
+</article>

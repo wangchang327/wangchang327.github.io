@@ -1,0 +1,5 @@
+.DS_Store
+.vscode
+public
+.hugo_build.lock
+resources

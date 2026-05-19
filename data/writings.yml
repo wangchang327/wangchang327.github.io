@@ -1,0 +1,86 @@
+-
+    title: "Dynamic Budget Throttling in Repeated Second-Price Auctions"
+    coauthors:
+        - zhchen
+        - xtdeng
+        - yqpan
+        - zmshi
+        - qwang
+    summary: >
+        We establish lower bounds and upper bounds on the the performance of online throttling in repeated second-price auctions for stochastic/adversarial buyer values and full/partial information structures. We also compare throttling with pacing and establish that throttling is the asymptotically optimal dynamic bidding strategy when the buyer's values are adversarial.
+    arxiv: "2207.04690"
+    conf:
+        citation: "The 38th Annual AAAI Conference on Artificial Intelligence (AAAI'24)"
+        url: "https://ojs.aaai.org/index.php/AAAI/article/view/28816"
+
+-
+    title: "Budget-Constrained Auctions with Unassured Priors: Strategic Equivalence and Structural Properties"
+    coauthors:
+        - zhchen
+        - xtdeng
+        - jcli
+        - mwyang
+    summary: >
+        We study multiple budget-control mechanisms under the scenario where the buyers can report their value distributions to the seller. We prove that well-studied mechanisms are strategically equivalent under mild conditions. En route, we apply the bid-discount method to first-price auctions and establish desired properties of the resulting new mechanism.
+    arxiv: "2203.16816"
+    conf:
+        citation: "The 2024 ACM Web Conference (WWW'24, Oral)"
+        url: "https://dl.acm.org/doi/10.1145/3589334.3645344"
+
+-
+    title: "Contextual Decision-Making with Knapsacks beyond the Worst Case"
+    coauthors:
+        - rai
+        - zhchen
+        - xtdeng
+        - yqpan
+        - mwyang
+    summary: >
+        We provide a beyond-worst-case study on the framework of a dynamic decision-making scenario with resource constraints. We first show a condition which, if violated, implies that the worst-case regret is unavoidable. We then provide an algorithm that achieves logarithmic regret rates under the condition via the re-solving heuristic. Our new algorithm still achieves near-optimal regret in the worst-case.
+    arxiv: "2211.13952"
+    conf:
+        citation: "The 38th Annual Conference on Neural Information Processing Systems (NeurIPS'24)"
+        url: "https://proceedings.neurips.cc/paper_files/paper/2024/hash/a0e1c2c40fc245b5fe7251ea33fbb045-Abstract-Conference.html"
+
+-
+    title: "Regulation of Algorithmic Collusion, Refined: Testing Pessimistic Calibrated Regret"
+    coauthors:
+        - jdhartline
+        - chzhang
+    summary: >
+        We study the regulation of algorithmic (non-)collusion amongst sellers by auditing their data as introduced by Hartline et al. [2024]. We develop an auditing method that tests whether a seller's pessimistic calibrated regret is low. This method relaxes the previous requirement that a pricing algorithm must use fully-supported price distributions to be auditable. Additionally, we strengthen the justification for using vanishing calibrated regret, versus vanishing best-in-hindsight regret, as the non-collusion definition, by showing that even without side information, the pricing algorithms that only satisfy weaker vanishing best-in-hindsight regret allow an opponent to manipulate them into posting supra-competitive prices.
+    arxiv: "2501.09740"
+    conf:
+        citation: "4th ACM Symposium on Computer Science and Law (CS&Law'25)"
+        url: "https://dl.acm.org/doi/10.1145/3709025.3712217"
+    note: "A preliminary version appeared in the 2nd Workshop on Regulatable ML @NeurIPS'24"
+
+-
+    title: "On the Impossibility of Information-Value-Free Learning Dynamics: Equilibrium Convergence and Algorithmic Collusion"
+    coauthors:
+        - jdhartline
+        - chzhang
+    conf:
+        citation: "27th ACM Conference on Economics and Computation (EC'26, to appear)"
+    note: "A preliminary poster appeared in the 5th ACM Symposium on Computer Science and Law (CS&Law'26)"
+
+-
+    title: "Discrete Math and Structures"
+    coauthors:
+        - xtdeng
+    summary: >
+        A textbook (in Chinese) designed for sophomore's honors discrete mathematics course that concentrates on useful techniques in computer science research and features in conciseness and readability. By-product of TAing the discrete math course at PKU.
+    expository:
+        citation: "Peking University Press (2024)"
+        url: "https://item.jd.com/14817648.html"
+
+-
+    title: "Lecture Notes in Chinese Chemistry Olympiad"
+    coauthors:
+        - shlin
+    summary: >
+        I wrote this book with my high school chemistry teacher in the summer after I graduated from high school. This is a textbook (in Chinese) that reviews important concepts and teaches a lot of problem-solving techniques for Chinese Chemistry Olympiad.
+    errata: "https://cchobook.github.io/supplementary_materials/errata2.pdf"
+    expository:
+        citation: "Zhejiang University Press (2023)"
+        url: "https://item.jd.com/14665648.html"

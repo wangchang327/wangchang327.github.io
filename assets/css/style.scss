@@ -1,0 +1,31 @@
+@import "main";
+
+small {
+    font-size: $font-size-small;
+}
+
+.alert-box {
+    background-color: $colour-background;
+    color: black;
+    padding: 0.8125rem 1rem;
+    text-align: left;
+    border: 0.25px solid $colour-dark-grey;
+    font-size: $font-size-small;
+}
+
+.notfound {
+    margin: 4rem;
+    text-align: center;
+    font-size: 45px;
+    font-weight: $font-weight-bold;
+}
+
+.summary {
+    background-color: #f3f3f3;
+}
+
+.toggle-summary {
+    cursor: pointer;
+
+    @include link(false);
+}

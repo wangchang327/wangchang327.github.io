@@ -1,0 +1,21 @@
+{{ define "body" }}
+    {{ partial "masthead.html" . }}
+    <main id="main" role="main" class="main">
+        <div class="items">
+            {{ .Content }}
+            {{ range .Pages.ByDate.Reverse.GroupByDate "2006" }}
+                <h2>{{ .Key }} <span class="item__count">({{ len .Pages }})</span></h2>
+                {{ range .Pages }}
+                    <article class="item item--blog">
+                        <h3 class="item__title">
+                            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        </h3>
+                        <div class="item__meta item__meta--rhs">
+                            <p class="item__meta-line">{{ .Date.Format "January 2" }}</p>
+                        </div>
+                    </article>
+                {{ end }}
+            {{ end }}
+        </div>
+    </main>
+{{ end }}

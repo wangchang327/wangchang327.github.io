@@ -1,0 +1,32 @@
+{{ define "body" }}
+    {{ partial "masthead.html" . }}
+    <main id="main" role="main" class="main">
+        {{ $writings := collections.Reverse hugo.Data.writings }}
+        <div class="items">
+            <h2>Working papers</h2>
+            {{ range $writings }}
+                {{ if and (not .journal) (not .conf) (not .expository) }}
+                    {{ partial "writing.html" (dict "writing" . "site" site) }}
+                {{ end }}
+            {{ end }}
+            <h2>Conference papers</h2>
+            {{ range $writings }}
+                {{ if .conf }}
+                    {{ partial "writing.html" (dict "writing" . "site" site) }}
+                {{ end }}
+            {{ end }}
+            <h2>Journal papers</h2>
+            {{ range $writings }}
+                {{ if .journal }}
+                    {{ partial "writing.html" (dict "writing" . "site" site) }}
+                {{ end }}
+            {{ end }}
+            <h2>Expository writings</h2>
+            {{ range $writings }}
+                {{ if .expository }}
+                    {{ partial "writing.html" (dict "writing" . "site" site) }}
+                {{ end }}
+            {{ end }}
+        </div>
+    </main>
+{{ end }}

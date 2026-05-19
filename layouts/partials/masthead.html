@@ -1,0 +1,15 @@
+<header class="masthead constrain">
+    <div class="masthead__wrapper">
+        <div class="masthead-bar">
+            <a href="/">
+                <h1 class="masthead-title">Chang Wang</h1>
+            </a>
+            <div class="masthead-bar__menu">
+                {{ partial "masthead-link.html" (dict "page" . "link" "" "title" "Home") }}
+                {{ partial "masthead-link.html" (dict "page" . "link" "writings" "title" "Writings") }}
+                {{ partial "masthead-link.html" (dict "page" . "link" "teaching" "title" "Teaching") }}
+                <!-- {{ partial "masthead-link.html" (dict "page" . "link" "blog" "title" "Blog") }} -->
+            </div>
+        </div>
+    </div>
+</header>
