@@ -56,7 +56,7 @@
     note: "A preliminary version appeared in the 2nd Workshop on Regulatable ML @NeurIPS'24"
 
 -
-    title: "On the Impossibility of Information-Value-Free Learning Dynamics: Equilibrium Convergence and Algorithmic Collusion"
+    title: "The Computable but Not Learnable Information-Value-Free Equilibria and Regulation of Algorithmic Collusion"
     coauthors:
         - jdhartline
         - chzhang
