@@ -1,0 +1,5 @@
+{{ $id := printf "pgp-fingerprint-%d" .Ordinal }}
+<span class="publication-info">
+    <button class="info-button" type="button" aria-label="PGP key fingerprint" aria-describedby="{{ $id }}">{{ partial "publication-icon.html" "info" }}</button>
+    <span class="publication-tooltip" role="tooltip" id="{{ $id }}">Primary key fingerprint: <code>0E84 B301 4C88 8F03 5A56 D252 8952 6CE6 C02A 9270</code></span>
+</span>

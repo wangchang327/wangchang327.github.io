@@ -1,0 +1,10 @@
+<div class="post-list">
+    {{ range . }}
+        <article>
+            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            {{ partial "blog/meta.html" . }}
+        </article>
+    {{ else }}
+        <p>No posts yet.</p>
+    {{ end }}
+</div>

@@ -1,0 +1,22 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ site.Title }}</title>
+    {{ $description := .Description | default site.Params.description }}
+    <meta name="description" content="{{ $description | plainify }}">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&amp;family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;family=Noto+Serif+SC:wght@400;700&amp;display=swap">
+    <script>
+        try {
+            const theme = localStorage.getItem('theme');
+            document.documentElement.dataset.theme = ['light', 'dark'].includes(theme) ? theme : 'auto';
+        } catch {}
+    </script>
+    {{ $style := resources.Get "css/style.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
+    {{ $canonical := .Permalink }}
+    {{ if or (and (eq .Kind "section") (eq .Section "blog")) (eq .Kind "term") }}
+        {{ $canonical = (partial "blog/paginator.html" .).URL | absURL }}
+    {{ end }}
+    <link rel="canonical" href="{{ $canonical }}">
+</head>

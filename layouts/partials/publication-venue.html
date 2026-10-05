@@ -1,0 +1,19 @@
+{{ $label := .venue.short | default .venue.citation }}
+{{ with $label }}
+    {{ $id := printf "publication-%s-%s" (crypto.MD5 $.writing.title) $.kind }}
+    <p class="publication-venue">
+        <em>{{ . }}</em>
+        {{ if or $.venue.citation $.writing.note }}
+            <span class="publication-info">
+                <button class="info-button" type="button" aria-label="Publication details" aria-describedby="{{ $id }}">{{ partial "publication-icon.html" "info" }}</button>
+                <span class="publication-tooltip" role="tooltip" id="{{ $id }}">{{ $.venue.citation | default . }}{{ with $.writing.note }}. {{ . }}{{ end }}</span>
+            </span>
+        {{ end }}
+        {{ with $.venue.distinction }}
+            <span class="publication-info">
+                <button class="info-button" type="button" aria-label="Publication distinction" aria-describedby="{{ $id }}-distinction">{{ partial "publication-icon.html" "star" }}</button>
+                <span class="publication-tooltip" role="tooltip" id="{{ $id }}-distinction">{{ . }}</span>
+            </span>
+        {{ end }}
+    </p>
+{{ end }}

@@ -1,0 +1,91 @@
+-
+    title: "Contextual Decision-Making with Knapsacks beyond the Worst Case"
+    authors:
+        - { id: zhchen }
+        - { id: rai }
+        - { id: mwyang }
+        - { id: yqpan }
+        - { id: cwang }
+        - { id: xtdeng }
+    arxiv: "2211.13952"
+    conf:
+        short: "NeurIPS 2024"
+        citation: "The 38th Annual Conference on Neural Information Processing Systems"
+        url: "https://proceedings.neurips.cc/paper_files/paper/2024/hash/a0e1c2c40fc245b5fe7251ea33fbb045-Abstract-Conference.html"
+
+-
+    title: "Budget-Constrained Auctions with Unassured Priors: Strategic Equivalence and Structural Properties"
+    authors:
+        - { id: zhchen }
+        - { id: mwyang }
+        - { id: cwang }
+        - { id: jcli }
+        - { id: zcai }
+        - { id: ykren }
+        - { id: zhzhu }
+        - { id: xtdeng }
+    arxiv: "2203.16816"
+    conf:
+        short: "WWW 2024"
+        citation: "The 2024 ACM Web Conference"
+        distinction: "Oral presentation"
+        url: "https://dl.acm.org/doi/10.1145/3589334.3645344"
+
+-
+    title: "Dynamic Budget Throttling in Repeated Second-Price Auctions"
+    authors:
+        - { id: zhchen, equal: true }
+        - { id: cwang, equal: true }
+        - { id: qwang, equal: true }
+        - { id: yqpan }
+        - { id: zmshi }
+        - { id: zcai }
+        - { id: ykren }
+        - { id: zhzhu }
+        - { id: xtdeng }
+    arxiv: "2207.04690"
+    conf:
+        short: "AAAI 2024"
+        citation: "The 38th Annual AAAI Conference on Artificial Intelligence"
+        url: "https://ojs.aaai.org/index.php/AAAI/article/view/28816"
+
+-
+    title: "Regulation of Algorithmic Collusion, Refined: Testing Pessimistic Calibrated Regret"
+    alphabetical: true
+    authors:
+        - { id: jdhartline }
+        - { id: cwang }
+        - { id: chzhang }
+    arxiv: "2501.09740"
+    conf:
+        short: "CS&Law 2025"
+        citation: "4th ACM Symposium on Computer Science and Law"
+        url: "https://dl.acm.org/doi/10.1145/3709025.3712217"
+    note: "A preliminary version appeared in the 2nd Workshop on Regulatable ML @NeurIPS'24."
+
+-
+    title: "The Computable but Not Learnable Information-Value-Free Equilibria and Regulation of Algorithmic Collusion"
+    alphabetical: true
+    authors:
+        - { id: jdhartline }
+        - { id: cwang }
+        - { id: chzhang }
+    arxiv: "2607.27128"
+    conf:
+        short: "EC 2026"
+        citation: "27th ACM Conference on Economics and Computation"
+    note: "A preliminary poster appeared in the 5th ACM Symposium on Computer Science and Law."
+
+-
+    title: "Algorithmic Principles For Multiclass Learning Are Hard To Come By: Limits of Regularization and Proper Learning"
+    alphabetical: true
+    authors:
+        - { id: jasilis }
+        - { id: sdughmi }
+        - { id: vsharan }
+        - { id: asun }
+        - { id: shteng }
+        - { id: cwang }
+    arxiv: "2608.26516"
+    conf:
+        short: "Manuscript 2026"

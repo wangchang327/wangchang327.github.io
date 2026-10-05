@@ -1,0 +1,10 @@
+{{- $labels := dict "clock" "Reading time" "categories" "Categories" "tags" "Tags" -}}
+<svg class="meta-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="{{ index $labels . }}" focusable="false">
+    {{- if eq . "clock" -}}
+        <circle cx="8" cy="8" r="6.5"/><path d="M8 4v4l3 2"/>
+    {{- else if eq . "categories" -}}
+        <path d="M1.5 13V3h5l2 2h6v8Z"/>
+    {{- else -}}
+        <path d="M1.5 1.5h6l7 7-6 6-7-7Z"/><circle cx="5" cy="5" r="1"/>
+    {{- end -}}
+</svg>

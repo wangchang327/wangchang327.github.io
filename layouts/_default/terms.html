@@ -1,0 +1,12 @@
+{{ define "main" }}
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+    {{ partial "blog/nav.html" . }}
+    <ul>
+        {{ range .Data.Terms.Alphabetical }}
+            <li><a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a> ({{ .Count }})</li>
+        {{ else }}
+            <li>No {{ .Title | lower }} yet.</li>
+        {{ end }}
+    </ul>
+{{ end }}

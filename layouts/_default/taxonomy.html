@@ -1,0 +1,8 @@
+{{ define "main" }}
+    <h1>{{ .Data.Singular | title }}: {{ .Title }}</h1>
+    {{ .Content }}
+    {{ partial "blog/nav.html" . }}
+    {{ $paginator := partial "blog/paginator.html" . }}
+    {{ partial "blog/posts.html" $paginator.Pages }}
+    {{ partial "blog/pagination.html" $paginator }}
+{{ end }}

@@ -1,0 +1,27 @@
+{{ $writing := . }}
+<article class="publication">
+    <h2 class="publication-title">
+        {{ .title }}
+        <span class="publication-links">
+            {{ with .arxiv }}[{{ partial "link.html" (dict "url" (printf "https://arxiv.org/abs/%v" .) "text" "arXiv") }}]{{ end }}
+            {{ with .slides }}[{{ partial "link.html" (dict "url" (. | relURL) "text" "slides") }}]{{ end }}
+            {{ with .video }}[{{ partial "link.html" (dict "url" (. | relURL) "text" "video") }}]{{ end }}
+            {{ with .article }}[{{ partial "link.html" (dict "url" (. | relURL) "text" "published article") }}]{{ end }}
+            {{ with .conf }}{{ with .url }}[{{ partial "link.html" (dict "url" . "text" "conference article") }}]{{ end }}{{ end }}
+            {{ with .journal }}{{ with .url }}[{{ partial "link.html" (dict "url" . "text" "journal article") }}]{{ end }}{{ end }}
+        </span>
+    </h2>
+    <p class="publication-authors">
+        {{- if .alphabetical }}<span class="author-order" aria-label="Authors listed alphabetically">(α-β)</span> {{ end -}}
+        {{- range $index, $author := .authors -}}
+            {{- if $index }}, {{ end -}}
+            {{- $person := index hugo.Data.collaborators $author.id -}}
+            {{- with $person.url -}}{{ partial "link.html" (dict "url" . "text" $person.name) }}{{- else -}}{{ $person.name }}{{- end -}}
+            {{- if and $author.equal (not $writing.alphabetical) -}}
+                <span class="equal-contributor" aria-label="equal contributor">*</span>
+            {{- end -}}
+        {{- end -}}
+    </p>
+    {{ with .conf }}{{ partial "publication-venue.html" (dict "venue" . "writing" $writing "kind" "conf") }}{{ end }}
+    {{ with .journal }}{{ partial "publication-venue.html" (dict "venue" . "writing" $writing "kind" "journal") }}{{ end }}
+</article>

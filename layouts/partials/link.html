@@ -1,0 +1,3 @@
+{{- $url := urls.Parse .url -}}
+{{- $external := and $url.Host (ne (lower $url.Host) (lower (urls.Parse site.BaseURL).Host)) (in (slice "" "http" "https") (lower $url.Scheme)) -}}
+<a href="{{ .url }}"{{ with .title }} title="{{ . }}"{{ end }}{{ if $external }} target="_blank" rel="noopener"{{ end }}>{{ .text }}</a>

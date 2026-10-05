@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="{{ .Params.language | default site.Language.Locale }}">
+    {{ partial "head.html" . }}
+    <body id="top">
+        <a class="skip-link" href="#main">Skip to content</a>
+        {{ partial "masthead.html" . }}
+        <main id="main">
+            {{ block "main" . }}{{ end }}
+        </main>
+        {{ partial "footer.html" . }}
+        {{ partial "scripts.html" . }}
+    </body>
+</html>

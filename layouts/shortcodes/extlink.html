@@ -1,0 +1,2 @@
+{{- $text := .Page.RenderString (dict "display" "inline") (.Get 1) -}}
+{{- partial "link.html" (dict "url" (.Get 0) "text" $text) -}}

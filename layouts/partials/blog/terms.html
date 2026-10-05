@@ -1,0 +1,7 @@
+{{ range slice "categories" "tags" }}
+    {{ $taxonomy := . }}
+    {{ with $.GetTerms . }}
+        {{ $first := index . 0 }}
+        <span> · <span class="meta-label">{{ partial "blog/icon.html" $taxonomy }} <a href="{{ $first.RelPermalink }}">{{ $first.LinkTitle }}</a></span>{{ range after 1 . }}, <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}</span>
+    {{ end }}
+{{ end }}

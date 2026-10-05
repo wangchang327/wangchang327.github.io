@@ -1,0 +1,25 @@
+{{ define "main" }}
+    {{ partial "blog/nav.html" . }}
+    <article>
+        <header class="post-header">
+            <h1>{{ .Title }}</h1>
+            {{ partial "blog/meta.html" . }}
+        </header>
+        {{ if and (ne .Params.toc false) (findRE "<li>" .TableOfContents 1) }}
+            <details class="toc" open>
+                <summary>Contents</summary>
+                {{ .TableOfContents }}
+            </details>
+        {{ end }}
+        {{ .Content }}
+    </article>
+    <a class="back-to-top" href="#top" aria-label="Back to top" hidden>
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 13V3m-5 5 5-5 5 5"/></svg>
+    </a>
+    {{ if or .PrevInSection .NextInSection }}
+        <nav class="post-nav" aria-label="More posts">
+            {{ with .PrevInSection }}<a href="{{ .RelPermalink }}" rel="prev">← Previous: {{ .Title }}</a>{{ end }}
+            {{ with .NextInSection }}<a href="{{ .RelPermalink }}" rel="next">Next: {{ .Title }} →</a>{{ end }}
+        </nav>
+    {{ end }}
+{{ end }}

@@ -1,0 +1,7 @@
+{{ $script := resources.Get "js/site.js" | minify | fingerprint }}
+<script defer src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+{{ $consent := resources.Get "js/consent.js" | minify | fingerprint }}
+<script id="consent-script" defer src="{{ $consent.RelPermalink }}" integrity="{{ $consent.Data.Integrity }}" data-analytics-id="{{ site.Params.googleAnalytics }}"></script>
+{{ if .Param "math" }}
+    {{ partial "math.html" . }}
+{{ end }}

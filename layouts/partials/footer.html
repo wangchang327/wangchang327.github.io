@@ -1,0 +1,10 @@
+<footer class="site-footer">
+    <p>© {{ now.Year }} {{ site.Title }} · <a href="{{ "privacy/" | relURL }}">Privacy</a><span id="cookie-controls" hidden> · <button id="cookie-settings" type="button" aria-controls="cookie-banner" aria-expanded="false">Cookie settings</button></span><span id="cookie-status" role="status"></span></p>
+</footer>
+<section id="cookie-banner" aria-labelledby="cookie-title" tabindex="-1" hidden>
+    <p id="cookie-title">Allow Google Analytics cookies to measure visits? <a href="{{ "privacy/" | relURL }}">Privacy details</a>.</p>
+    <div class="cookie-actions">
+        <button type="button" data-consent="accepted" aria-label="Accept analytics cookies">Accept</button>
+        <button type="button" data-consent="rejected" aria-label="Reject analytics cookies">Reject</button>
+    </div>
+</section>

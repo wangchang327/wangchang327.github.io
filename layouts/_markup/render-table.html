@@ -1,0 +1,25 @@
+{{- $headers := index .THead 0 -}}
+<table class="responsive-table{{ with .Attributes.class }} {{ . }}{{ end }}"
+    {{- range $name, $value := .Attributes }}
+        {{- if ne $name "class" }} {{ $name | safeHTMLAttr }}="{{ $value }}"{{ end }}
+    {{- end }}>
+    <thead>
+        {{ range .THead }}
+            <tr>
+                {{ range . }}
+                    <th{{ with .Alignment }} style="text-align: {{ . }}"{{ end }}>{{ .Text }}</th>
+                {{ end }}
+            </tr>
+        {{ end }}
+    </thead>
+    <tbody>
+        {{ range .TBody }}
+            <tr>
+                {{ range $index, $cell := . }}
+                    {{ $label := (index $headers $index).Text | plainify | htmlUnescape | strings.TrimSpace }}
+                    <td header="{{ $label }}"{{ with .Alignment }} style="text-align: {{ . }}"{{ end }}>{{ .Text }}</td>
+                {{ end }}
+            </tr>
+        {{ end }}
+    </tbody>
+</table>

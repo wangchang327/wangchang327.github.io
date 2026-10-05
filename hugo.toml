@@ -1,0 +1,40 @@
+baseURL = "https://wangchang327.github.io/"
+title = "Chang Wang"
+locale = "en-US"
+timezone = "America/Chicago"
+enableRobotsTXT = true
+
+[pagination]
+    pagerSize = 5
+
+[taxonomies]
+    tag = "tags"
+    category = "categories"
+
+[params]
+    description = "Chang Wang's Personal Website"
+    math = true
+    googleAnalytics = "G-1QL9CP74XK"
+
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
+        [markup.goldmark.extensions]
+            [markup.goldmark.extensions.passthrough]
+                enable = true
+                [markup.goldmark.extensions.passthrough.delimiters]
+                    block = [['\[', '\]'], ['$$', '$$']]
+                    inline = [['\(', '\)'], ['$', '$']]
+    [markup.highlight]
+        codeFences = false
+    [markup.tableOfContents]
+        startLevel = 2
+        endLevel = 4
+
+[outputs]
+    home = ["HTML"]
+    page = ["HTML"]
+    section = ["HTML"]
+    taxonomy = ["HTML"]
+    term = ["HTML"]

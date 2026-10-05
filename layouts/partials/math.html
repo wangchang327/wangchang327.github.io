@@ -1,0 +1,15 @@
+<script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            processEscapes: true
+        },
+        loader: { load: ['ui/safe'] },
+        output: {
+            font: 'mathjax-stix2',
+            fontPath: 'https://cdn.jsdelivr.net/npm/@mathjax/%%FONT%%-font@4.0.0'
+        }
+    };
+</script>
+<script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0/tex-mml-chtml.js"></script>

@@ -1,0 +1,4 @@
+<div class="theorem"{{ with .Get "id" }} id="{{ . }}"{{ end }}>
+    <p><strong>{{ .Get "kind" | default "Theorem" }}{{ with .Get "title" }} ({{ . }}){{ end }}.</strong></p>
+    {{ .Page.RenderString (dict "display" "block") .Inner }}
+</div>

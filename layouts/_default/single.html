@@ -1,0 +1,7 @@
+{{ define "main" }}
+    <article>
+        {{ if eq .Section "teaching" }}<p><a href="{{ "teaching/" | relURL }}">← Teaching</a></p>{{ end }}
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+    </article>
+{{ end }}

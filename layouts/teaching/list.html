@@ -1,0 +1,20 @@
+{{ define "main" }}
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+    {{ range slice (dict "id" "NU" "name" "Northwestern University") (dict "id" "PKU" "name" "Peking University") }}
+        <h2>{{ .name }}</h2>
+        {{ $courses := where hugo.Data.teaching "school" .id }}
+        {{ $semesters := slice }}
+        {{ range $courses }}{{ $semesters = $semesters | append .semester }}{{ end }}
+        <dl class="teaching-list">
+            {{ range $semesters | uniq }}
+                <dt><em>{{ . }}</em></dt>
+                {{ range where $courses "semester" . }}
+                    <dd>
+                        <strong>{{ if .url }}{{ partial "link.html" (dict "url" (.url | relURL) "text" (printf "%s: %s" .number .title)) }}{{ else }}{{ .number }}: {{ .title }}{{ end }}</strong>{{ if .ta }} (TA){{ end }}
+                    </dd>
+                {{ end }}
+            {{ end }}
+        </dl>
+    {{ end }}
+{{ end }}

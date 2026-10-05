@@ -1,0 +1,11 @@
+<details class="proof" open>
+    <summary>{{ .Get "title" | default "Proof" }}</summary>
+    {{- $body := .Page.RenderString (dict "display" "block") .Inner -}}
+    {{- $qed := `<span class="proof-end" role="img" aria-label="End of proof">&#9633;</span>` -}}
+    {{- if strings.HasSuffix (strings.TrimSpace $body) "</p>" }}
+        {{ replaceRE `</p>\s*$` (printf "%s</p>" $qed) $body | safeHTML }}
+    {{- else }}
+        {{ $body }}
+        <p>{{ $qed | safeHTML }}</p>
+    {{- end }}
+</details>

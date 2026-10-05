@@ -1,0 +1,6 @@
+{{/* Head and list rendering must initialize pagination with the same collection. */}}
+{{- $posts := .RegularPagesRecursive -}}
+{{- if eq .Kind "term" -}}
+    {{- $posts = where .RegularPages "Section" "blog" -}}
+{{- end -}}
+{{- return (.Paginate $posts.ByDate.Reverse) -}}

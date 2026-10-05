@@ -1,0 +1,8 @@
+<nav class="blog-nav" aria-label="Blog">
+    {{ $current := . }}
+    {{ range slice "blog" "tags" "categories" }}
+        {{ with site.GetPage . }}
+            <a href="{{ .RelPermalink }}"{{ if .Eq $current }} aria-current="page"{{ end }}>{{ if eq .Section "blog" }}Index{{ else }}{{ .Title }}{{ end }}</a>
+        {{ end }}
+    {{ end }}
+</nav>
