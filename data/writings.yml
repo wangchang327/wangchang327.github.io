@@ -89,3 +89,13 @@
     arxiv: "2608.26516"
     conf:
         short: "Manuscript 2026"
+
+-
+    title: "Calibeating Bandit Advice"
+    alphabetical: true
+    authors:
+        - { id: jdhartline }
+        - { id: cwang }
+        - { id: yfwu }
+    conf:
+        short: "Manuscript 2026"
